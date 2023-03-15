@@ -2,12 +2,14 @@
 # glasnye = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
 mYes = '«Парам пам-пам» - ритм сохранен'
 mNo = '«Пум пурум» - ритм нарушен'
-stroka = ('пара-ра-рам рам-пам-папам па-ра-па-дам').lower()
+# stroka = ('пара-ра-рам рам-пам-папам па-ра-па-дам').lower()
+# stroka = ('hh hh hh').lower()
+stroka = input()
 # stroka = ('пара-ра-рам рам-пам-папам па-ра-па-дам ду-да-да').lower()
 print('фраза:', stroka)
 slova = stroka.split()
 
-'''
+
 # простое решение
 cnt=0
 for i in range(len(slova)):
@@ -20,8 +22,8 @@ if cnt%len(slova)==0:
     print(mYes)
 else:
     print(mNo)
-'''
-'''
+
+
 # чуть более красивое
 # сразу считаем колво слогов в первом слове и сравниваем с остальными
 cnt = len(list(_ for _ in stroka.split() if _ in 'ауоыиэяюёе'))
@@ -37,7 +39,7 @@ if flag==0:
     print(mNo)
 else:
     print(mYes)
-'''
+
 # самое короткое решение
 if (len(list(_ for _ in stroka if _ in 'ауоыиэяюёе')))%len(slova)==0:
     print(mYes)
